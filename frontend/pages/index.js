@@ -1,6 +1,5 @@
 import AppCard from "../components/AppCard";
 import KPICard from "../components/KPICard";
-import ThemeSwitcher from "../components/ThemeSwitcher";
 
 export default function Home() {
   return (
