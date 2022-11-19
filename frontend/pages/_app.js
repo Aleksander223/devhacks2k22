@@ -1,13 +1,14 @@
 import '../styles/globals.css'
 import Navbar from '../components/Navbar';
-import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
 
   return (
     <>
       <Navbar />
-      <Component {...pageProps} />
+      <div className="p-6 min-h-[100vh] ">
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }
