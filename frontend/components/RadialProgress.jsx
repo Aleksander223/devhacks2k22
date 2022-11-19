@@ -1,15 +1,6 @@
-const RadialProgress = () => {
+const RadialProgress = ({percent}) => {
     return (
-        <div
-            className="radial-progress"
-            style={{
-                "--value": "70",
-                "--size": "8rem",
-                "--thickness": "0.5rem",
-            }}
-        >
-            70%
-        </div>
+        <div className="radial-progress mx-auto mt-4 xl:mt-5 xl:mx-3 text-primary" style={{"--value": percent}}>{percent}%</div>
     );
 };
 
