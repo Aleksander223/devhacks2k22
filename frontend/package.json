@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookstate/core": "^4.0.0-rc21",
+    "@hookstate/localstored": "^4.0.0-rc21",
     "daisyui": "^2.41.0",
     "next": "13.0.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icon": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
