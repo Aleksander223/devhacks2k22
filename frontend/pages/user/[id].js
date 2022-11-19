@@ -39,7 +39,6 @@ const UserProfile = () => {
                         </div>
                         <div className="w-1/2 sm:w-auto">
                             <div className="stats shadow">
-
                                 <div className="stat">
                                     <div className="stat-title">Community points</div>
                                     <div className="stat-value text-secondary">{userInfo.communityPoints}</div>
@@ -51,7 +50,7 @@ const UserProfile = () => {
                     </div>
                 </div>
                 <div className="col-span-1 flex flex-col md:flex-row">
-                    <div className="card bg-base-100 shadow-md border-neutral-base-200 border-2 w-full">
+                    <div className="card bg-base-100 shadow-md border-base-200 border-2 w-full">
                         <div className="card-body w-full">
                             <h2 className="card-title mx-auto text-primary">Milestones</h2>
                             <div className="divider"></div>
@@ -74,7 +73,7 @@ const UserProfile = () => {
                     <br />
                 </div>
                 <div className="col-span-1 mt-8">
-                    <div className="card bg-base-100 shadow-md border-neutral-base-200 border-2 w-full">
+                    <div className="card bg-base-100 shadow-md border-base-200 border-2 w-full">
                         <div className="card-body w-full">
                             <h2 className="card-title mx-auto text-primary">Upcoming events</h2>
                             <div className="divider"></div>

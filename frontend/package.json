@@ -11,9 +11,12 @@
   "dependencies": {
     "@hookstate/core": "^4.0.0-rc21",
     "@hookstate/localstored": "^4.0.0-rc21",
+    "chart.js": "^4.0.1",
     "daisyui": "^2.41.0",
+    "faker": "^5.5.3",
     "next": "13.0.4",
     "react": "18.2.0",
+    "react-chartjs-2": "^5.0.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "theme-change": "^2.2.0"
