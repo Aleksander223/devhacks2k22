@@ -1,28 +1,44 @@
 import Image from "next/image";
 import Avatar from "./Avatar";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { FiHome, FiPlusCircle, FiUsers } from "react-icons/fi";
+import Link from 'next/link'
 
 export default function Navbar() {
     return (
-        <div className="navbar bg-base sticky top-0 z-10 backdrop-filter backdrop-blur-sm bg-opacity-30 border-b border-gray-200">
-            <div className="flex-1">
-                <a className="text-primary normal-case text-xl ml-4 w-32"><Image src="/logo.png" alt="2gather" layout="responsive" width={3775} height={1112} sizes="70vw" priority></Image></a>
+        <div className="navbar bg-base sticky top-0 z-50 backdrop-filter backdrop-blur-sm bg-opacity-30 border-b border-gray-200">
+            <div className="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
+                        <li><Link href="/"><FiHome />Home</Link></li>
+                        <li><Link href="/action"><FiPlusCircle />Add action</Link></li>
+                        <li><Link href="/community"><FiUsers /> Community</Link></li>
+                    </ul>
+                </div>
+                <a className="btn btn-ghost text-primary normal-case text-xl ml-4 w-32"><Image src="/logo.png" alt="2gather" layout="responsive" width={3775} height={1112} sizes="70vw" priority></Image></a>
             </div>
-            <div className="flex-none gap-2">
+            <ul class="menu menu-horizontal navbar-center hidden lg:flex text-lg">
+                <li><Link href="/"><FiHome />Home</Link></li>
+                <li><Link href="/action"><FiPlusCircle />Add action</Link></li>
+                <li><Link href="/community"><FiUsers /> Community</Link></li>
+            </ul>
+            <div className="navbar-end gap-2">
                 <ThemeSwitcher />
                 <div className="dropdown dropdown-end">
                     <Avatar className="w-10" />
                     <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-300 bg-opacity-100 rounded-box w-52">
                         <li>
-                            <a className="justify-between">
+                            <Link href="/user/1" className="justify-between">
                                 Profile
-                            </a>
+                            </Link>
                         </li>
-                        <li><a>Settings</a></li>
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
-            </div> 
+            </div>
         </div>
     );
 }
