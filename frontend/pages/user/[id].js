@@ -1,6 +1,7 @@
 import React from "react";
 import Avatar from "../../components/Avatar";
-import { FiHome, FiUser, FiZap, FiBriefcase, FiClipboard, FiPhone, FiMail, FiEdit } from "react-icons/fi";
+import { FiHome, FiUser, FiZap, FiBriefcase, FiClipboard, FiPhone, FiMail, FiEdit, FiHeart } from "react-icons/fi";
+import KPICard from "../../components/KPICard";
 
 const info = {
     address: "Str. Lorem Ipsum 4",
@@ -18,7 +19,7 @@ const UserProfile = () => {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 grid-flow-row lg:grid-flow-col gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div className="col-span-1 text-center flex">
                     <div><Avatar className="w-24 md:w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" avatar={false} online />
                         <br />
@@ -49,8 +50,42 @@ const UserProfile = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1 bg-secondary flex flex-col md:flex-row">2</div>
-                <div className="col-span-1 bg-primary flex flex-col md:flex-row">test</div>
+                <div className="col-span-1 flex flex-col md:flex-row">
+                    <div className="card bg-base-100 shadow-md border-neutral-base-200 border-2 w-full">
+                        <div className="card-body w-full">
+                            <h2 className="card-title mx-auto text-primary">Milestones</h2>
+                            <div className="divider"></div>
+                            <div>
+                                <div className="btn btn-sm btn-circle btn-outline border-success border-2"><FiHeart className="text-success font-black" /></div>
+                                <p className="inline ml-4 text-lg">Prietenul copacilor <span className="text-accent font-semibold">lvl 3</span></p>
+                                <br />
+                                <progress class="progress progress-success w-full" value="45" max="100"></progress>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div className="col-span-1 mt-8">
+                    <KPICard title="2Support Solutions" percent={52} text="lorem" />
+                    <br />
+                    <KPICard title="2Solve Activities" percent={84} text="lorem" />
+                    <br />
+                    <KPICard title="2GiveBack Gifts" percent={12} text="lorem" />
+                    <br />
+                </div>
+                <div className="col-span-1 mt-8">
+                    <div className="card bg-base-100 shadow-md border-neutral-base-200 border-2 w-full">
+                        <div className="card-body w-full">
+                            <h2 className="card-title mx-auto text-primary">Upcoming events</h2>
+                            <div className="divider"></div>
+                            <div>
+                                <div className="badge badge-primary p-4 text-lg font-semibold">10.12.2022</div>
+                                <p className="inline ml-4 text-lg">Prindem solobani</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );
