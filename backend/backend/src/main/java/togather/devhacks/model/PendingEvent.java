@@ -13,6 +13,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class PendingEvent {
     @Field(name = "eventId")
     String eventId;
-    @Field(name = "userId")
-    String userId;
+    @Field(name = "userEmail")
+    String userEmail;
 }

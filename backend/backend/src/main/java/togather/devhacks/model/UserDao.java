@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.aggregation.ConvertOperators;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -29,7 +30,7 @@ public class UserDao {
     @Field(name = "address")
     public String address;
 
-    @Field(name = "userType")
+    @Field(name = "type")
     USER_TYPE type;
     @Field(name = "email")
     @Indexed(unique = true)
@@ -44,6 +45,9 @@ public class UserDao {
     public String[] services;
     @Field(name = "pictureId")
     public String pictureId;
+
+    @Field(name = "communityId")
+    public String communityId;
 
     public UserDao(String phoneNumber, String email, String firstName, String lastName) {
         this.phoneNumber = phoneNumber;

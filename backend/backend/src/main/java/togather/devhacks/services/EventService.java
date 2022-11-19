@@ -23,17 +23,29 @@ public class EventService {
     @Autowired
     UserRepository userRepository;
 
-    public void registerEvent(CommunityEvent communityEvent, String initiatorId){
-        eventRepository.insert(communityEvent);
-        dispatch(communityEvent, initiatorId);
+    public void registerEvent(CommunityEvent communityEvent, String email){
+        var initiator = userRepository.findByEmail(email).get();
+        var communityId = initiator.getCommunityId();
+        communityEvent.setCommunityId(communityId);
+        communityEvent.setInitiatorId(initiator.getId());
+        communityEvent = eventRepository.insert(communityEvent);
+        dispatch(communityEvent,email);
     }
 
-    public void dispatch(CommunityEvent communityEvent, String initiatorId) {
-        List<UserDao> users = userRepository.findByCommunityId();
-        List<PendingEvent> events = new ArrayList<>();
+    public void dispatch(CommunityEvent communityEvent,String email) {
+        List<UserDao> users = userRepository.findByCommunityId(communityEvent.getCommunityId());
         for (var user : users) {
-            if(user.getId().equals(initiatorId))
-                events.add(new PendingEvent(communityEvent.getCommunityId(), user.getId()));
+            pendingRepository.insert(new PendingEvent(communityEvent.getId(), user.getEmail()));
         }
+    }
+
+    public List<CommunityEvent> getPendingEvents(String email) {
+        var pendingEvents =  pendingRepository.findPendingEventByUserEmail(email);
+        List<CommunityEvent> communityEvents = new ArrayList<>();
+        for(var pendingEvent : pendingEvents) {
+            var event = eventRepository.findById(pendingEvent.getEventId());
+            event.ifPresent(communityEvents::add);
+        }
+        return communityEvents;
     }
 }

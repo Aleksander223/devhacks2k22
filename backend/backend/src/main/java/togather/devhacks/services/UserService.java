@@ -21,14 +21,14 @@ public class UserService {
         return status.ADDED;
     }
 
-    public Optional<UserDao.USER_TYPE> getUserType(String userId) {
-        Optional<UserDao> queryResponse = userRepository.findById(userId);
+    public Optional<UserDao.USER_TYPE> getUserType(String email) {
+        Optional<UserDao> queryResponse = userRepository.findByEmail(email);
         UserDao.USER_TYPE userType;
         if (queryResponse.isEmpty()) {
             return Optional.empty();
         }
         userType = queryResponse.get().getType();
-        return Optional.of(userType);
+         return Optional.ofNullable(userType);
     }
 
     public List<UserDao> getAllUsers() {
