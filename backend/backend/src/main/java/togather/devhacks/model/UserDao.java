@@ -16,6 +16,10 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @NoArgsConstructor
 public class UserDao {
 
+    public enum USER_TYPE {
+        NORMAL, BUSINESS, AMBASSADOR
+    }
+
     @Id
     @Field(name = "_id")
     public String Id;
@@ -25,6 +29,8 @@ public class UserDao {
     @Field(name = "address")
     public String address;
 
+    @Field(name = "userType")
+    USER_TYPE type;
     @Field(name = "email")
     @Indexed(unique = true)
     public String email;

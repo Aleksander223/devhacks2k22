@@ -13,4 +13,6 @@ public interface UserRepository extends MongoRepository<UserDao, String> {
 
     List<UserDao> findAll();
 
+    List<UserDao> findByCommunityId();
+
 }
