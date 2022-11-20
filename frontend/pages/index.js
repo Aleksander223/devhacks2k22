@@ -1,12 +1,64 @@
-import AppCard from "../components/AppCard";
 import ChartCard from "../components/ChartCard";
-import KPICard from "../components/KPICard";
 import { FiHeart, FiCoffee, FiShare2 } from "react-icons/fi";
 import { FaRecycle, FaRunning } from "react-icons/fa";
 import { useState } from "react";
+import Link from "next/link";
+
+const restaurants = [
+  {
+    id: 1,
+    name: "Shaormeria Baneasa",
+    img: "https://placeimg.com/400/225/arch"
+  },
+  {
+    id: 2,
+    name: "Furgoneta",
+    img: "https://placeimg.com/400/225/arch"
+  }
+]
+
+const events = [
+  {
+    id: 1,
+    name: "Test",
+    location: "Locatia A",
+    date: "22.10.2022"
+  },
+  {
+    id: 2,
+    name: "Test 2",
+    location: "Locatia B",
+    date: "23.10.2022"
+  }
+]
+
+const smallEvents = [
+  {
+    id: 1,
+    name: "test",
+    location: "Locatia X",
+    date: "22.10.2022"
+  },
+  {
+    id: 2,
+    name: "testing",
+    location: "Locatia Y",
+    date: "23.10.2022"
+  }
+]
+
+const feed = [
+  "X a facut y",
+  "bbbbbbbbbbbbbbbbbbbb",
+  "Lorem",
+  "aaaaaaaaaaaaaaa"
+]
 
 export default function Home() {
   const [tab, setTab] = useState(1);
+
+  const showRestaurantModal = (restaurant) => {
+  }
 
   return (
     <>
@@ -41,48 +93,53 @@ export default function Home() {
                   <a onClick={() => setTab(3)} className={`tab tab-bordered ${tab === 3 ? "tab-active" : ""}`}><FiShare2 className="mr-2" />Partners</a>
                 </div>
               </div>
-              {tab === 1 && <div className="flex flex-col md:flex-row gap-4 content-evenly"><div className="mt-4 card shadow-md p-4 md:p-8">
-                <div className="mx-auto text-center">
-                  <p className="text-2xl text-primary mb-3">Test</p>
-                  <div className="badge badge-primary p-4 text-lg font-semibold">Locatia A</div>
-                  <p className="inline ml-4 text-lg">22.10.2022</p>
-                </div>
-              </div>
-                <div className="mt-4 card shadow-md p-4 md:p-8">
-                  <div className="mx-auto text-center">
-                    <p className="text-2xl text-primary mb-3">Test</p>
-                    <div className="badge badge-primary p-4 text-lg font-semibold">Locatia A</div>
-                    <p className="inline ml-4 text-lg">22.10.2022</p>
-                  </div>
-                </div></div>}
-              {tab === 2 && <div className="flex flex-col md:flex-row gap-4 content-evenly"><div className="mt-4 card shadow-md p-4 md:p-8">
-                <div className="mx-auto text-center">
-                  <p className="text-2xl text-primary mb-3">Test2</p>
-                  <div className="badge badge-primary p-4 text-lg font-semibold">Locatia C</div>
-                  <p className="inline ml-4 text-lg">22.10.2022</p>
-                </div>
-              </div>
-                <div className="mt-4 card shadow-md p-4 md:p-8">
-                  <div className="mx-auto text-center">
-                    <p className="text-2xl text-primary mb-3">Test2</p>
-                    <div className="badge badge-primary p-4 text-lg font-semibold">Locatia D</div>
-                    <p className="inline ml-4 text-lg">22.10.2022</p>
-                  </div>
-                </div></div>}
-              {tab === 3 && <div className="flex flex-col md:flex-row gap-4 content-evenly"><div className="mt-4 card shadow-md p-4 md:p-8">
-                <div className="mx-auto text-center">
-                  <p className="text-lg text-semibold text-primary">Shaormeria Baneasa</p>
-                  <figure className="mt-4"><img src="https://placeimg.com/400/225/arch" alt="car!" /></figure>
+              {tab === 1 && <div className="flex flex-col md:flex-row gap-4 content-evenly">
+                {
+                  events.map(event => {
+                    return (
+                      <div className="mt-4 card shadow-md p-4 md:p-8">
 
-                </div>
-              </div>
-                <div className="mt-4 card shadow-md p-4 md:p-8">
-                  <div className="mx-auto text-center">
-                    <p className="text-lg text-semibold text-primary">Furgoneta</p>
-                    <figure className="mt-4"><img src="https://placeimg.com/400/225/arch" alt="car!" /></figure>
+                        <div className="mx-auto text-center">
+                          <p className="text-2xl text-primary mb-3">{event.name}</p>
+                          <div className="badge badge-primary p-4 text-lg font-semibold">{event.location}</div>
+                          <p className="inline ml-4 text-lg">{event.date}</p>
+                          <Link href={`/event/${event.id}`}><button className="btn btn-secondary mt-3 btn-sm btn-wide text-secondary-content">View</button></Link>
+                        </div>
+                      </div>
+                    );
+                  })
+                }
+              </div>}
+              {tab === 2 && <div className="flex flex-col md:flex-row gap-4 content-evenly">
+                {
+                  smallEvents.map(event => {
+                    return (
+                      <div className="mt-4 card shadow-md p-4 md:p-8">
 
-                  </div>
-                </div></div>}
+                        <div className="mx-auto text-center">
+                          <p className="text-2xl text-primary mb-3">{event.name}</p>
+                          <div className="badge badge-primary p-4 text-lg font-semibold">{event.location}</div>
+                          <p className="inline ml-4 text-lg">{event.date}</p>
+                          <Link href={`/event/${event.id}`}><button className="btn btn-secondary mt-3 btn-sm btn-wide text-secondary-content">View</button></Link>
+                        </div>
+                      </div>
+                    );
+                  })
+                }
+              </div>}
+              {tab === 3 && <div className="flex flex-col md:flex-row gap-4 content-evenly">
+                {restaurants.map((restaurant) => {
+                  return (
+                    <div className="mt-4 card shadow-md p-4 md:p-8">
+                      <div className="mx-auto text-center">
+                        <p className="text-lg text-semibold text-primary">{restaurant.name}</p>
+                        <figure className="mt-4"><img src={restaurant.img} alt="car!" /></figure>
+                        <Link href={`/restaurant/${restaurant.id}`}><button className="btn btn-secondary mt-3 btn-sm btn-wide text-secondary-content">View</button></Link>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>}
             </div>
           </div>
         </div>
@@ -92,12 +149,12 @@ export default function Home() {
               <h2 className="card-title mx-auto text-primary">Feed</h2>
               <div className="divider"></div>
               <ul className="steps steps-vertical">
-                <li data-content="★" className="step step-neutral">X a facut y</li>
-                <li data-content="?" className="step step-neutral">bbbbbbbbbbbbbbbbbbbb</li>
-                <li data-content="●" className="step step-neutral">Lorem</li>
-                <li data-content="●" className="step step-neutral">aaaaaaaaaaaaaaa</li>
+                {
+                  feed.map(notification => {
+                    return <li data-content="★" className="step step-neutral">{notification}</li>
+                  })
+                }
               </ul>
-
             </div>
           </div>
         </div>

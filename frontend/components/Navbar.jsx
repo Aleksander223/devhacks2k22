@@ -9,10 +9,10 @@ export default function Navbar() {
         <div className="navbar bg-base sticky top-0 z-50 backdrop-filter backdrop-blur-sm bg-opacity-30 border-b border-gray-200">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden text-2xl">
+                    <label tabindex="0" className="btn btn-ghost lg:hidden text-2xl">
                        <FiMenu/>
                     </label>
-                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
+                    <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
                         <li><Link href="/"><FiHome />Home</Link></li>
                         <li><Link href="/action"><FiPlusCircle />Add action</Link></li>
                         <li><Link href="/community"><FiUsers /> Community</Link></li>
@@ -20,7 +20,7 @@ export default function Navbar() {
                 </div>
                 <a className="btn btn-ghost text-primary normal-case text-xl w-32"><Image src="/logo.png" alt="2gather" layout="responsive" width={3775} height={1112} sizes="70vw" priority></Image></a>
             </div>
-            <ul class="menu menu-horizontal navbar-center hidden lg:flex text-lg">
+            <ul className="menu menu-horizontal navbar-center hidden lg:flex text-lg">
                 <li><Link href="/"><FiHome />Home</Link></li>
                 <li><Link href="/action"><FiPlusCircle />Add action</Link></li>
                 <li><Link href="/community"><FiUsers /> Community</Link></li>

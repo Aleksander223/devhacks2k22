@@ -58,7 +58,7 @@ const UserProfile = () => {
                                 <div className="btn btn-sm btn-circle btn-outline border-success border-2"><FiHeart className="text-success font-black" /></div>
                                 <p className="inline ml-4 text-lg">Prietenul copacilor <span className="text-accent font-semibold">lvl 3</span></p>
                                 <br />
-                                <progress class="progress progress-success w-full" value="45" max="100"></progress>
+                                <progress className="progress progress-success w-full" value="45" max="100"></progress>
                             </div>
 
                         </div>
@@ -77,10 +77,10 @@ const UserProfile = () => {
                         <div className="card-body w-full">
                             <h2 className="card-title mx-auto text-primary">Upcoming events</h2>
                             <div className="divider"></div>
-                            <div>
-                                <div className="badge badge-primary p-4 text-lg font-semibold">10.12.2022</div>
-                                <p className="inline ml-4 text-lg">Prindem solobani</p>
-                            </div>
+                                <div>
+                                    <div className="badge badge-primary p-4 text-lg font-semibold">10.12.2022</div>
+                                    <p className="inline ml-4 text-lg">Prindem solobani</p>
+                                </div>
 
                         </div>
                     </div>
