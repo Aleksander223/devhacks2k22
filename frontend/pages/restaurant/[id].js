@@ -1,6 +1,5 @@
 import { RiLeafLine } from "react-icons/ri";
-import {TbTemperature} from "react-icons/tb"
-import KPICard from "../../components/KPICard";
+import { TbTemperature } from "react-icons/tb"
 
 const restaurant = {
     name: "Test restaurant",
@@ -46,8 +45,20 @@ export default function RestaurantProfile() {
                                 </div>
                             </div>
                         </div>
-                        <div className="card bg-base-100 shadow-md border-base-200 border-2 w-full lg:w-2/3 p-4 mx-auto">
-                            1
+                        <div className="card bg-base-100 shadow-md border-base-200 border-2 w-full p-4 mx-auto mt-4">
+                            <div className="flex flex-col md:flex-row gap-4">
+                                {offers.map(offer => {
+                                    return (
+                                        <div className="mt-4 card shadow-md p-4 md:p-8 mx-auto w-full md:w-80">
+                                            <div>
+                                                <p className="inline ml-4 text-xl text-secondary">{offer.name}</p>
+                                                <p className="text-accent text-lg mt-1"><span className="line-through decoration-2 text-base-content mr-1">{offer.oldPrice} RON</span>{offer.newPrice} RON</p>
+                                                <p className="inline ml-4 text-md mt-1"><span className="text-accent">{offer.cost}</span> community points</p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>

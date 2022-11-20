@@ -1,4 +1,4 @@
-const Avatar = ({className, avatar = true, online}) => {
+const Avatar = ({className, avatar = true, online, img}) => {
     return (
         // <div className=" ">
         //     <div className="avatar online">
@@ -9,7 +9,7 @@ const Avatar = ({className, avatar = true, online}) => {
         // </div>
         <label tabIndex={0} className={`${avatar ? "btn btn-ghost btn-circle avatar" : "avatar"} ${online === false ? 'offline' : online === true ? 'online' : ''}`}>
             <div className={`${className} rounded-full`}>
-                <img src="https://placeimg.com/512/512/people" />
+                <img src={img ?? "https://placeimg.com/512/512/people"} />
             </div>
         </label>
     );

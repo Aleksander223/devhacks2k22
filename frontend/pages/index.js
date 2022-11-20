@@ -103,6 +103,7 @@ export default function Home() {
                           <p className="text-2xl text-primary mb-3">{event.name}</p>
                           <div className="badge badge-primary p-4 text-lg font-semibold">{event.location}</div>
                           <p className="inline ml-4 text-lg">{event.date}</p>
+                          <br/>
                           <Link href={`/event/${event.id}`}><button className="btn btn-secondary mt-3 btn-sm btn-wide text-secondary-content">View</button></Link>
                         </div>
                       </div>
@@ -120,6 +121,7 @@ export default function Home() {
                           <p className="text-2xl text-primary mb-3">{event.name}</p>
                           <div className="badge badge-primary p-4 text-lg font-semibold">{event.location}</div>
                           <p className="inline ml-4 text-lg">{event.date}</p>
+                          <br/>
                           <Link href={`/event/${event.id}`}><button className="btn btn-secondary mt-3 btn-sm btn-wide text-secondary-content">View</button></Link>
                         </div>
                       </div>
