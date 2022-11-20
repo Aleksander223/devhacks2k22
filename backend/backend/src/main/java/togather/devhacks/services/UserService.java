@@ -1,6 +1,7 @@
 package togather.devhacks.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import togather.devhacks.model.UserDao;
 import togather.devhacks.repository.UserRepository;
@@ -12,6 +13,9 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    MongoTemplate mongoTemplate;
     public status createUser(UserDao user) {
         try {
             userRepository.insert(user);
@@ -33,6 +37,21 @@ public class UserService {
 
     public List<UserDao> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    public boolean setImgId(String userId, String imgId){
+        var optuser = userRepository.findById(userId);
+        if (optuser.isEmpty()){
+            return false;
+        }
+        UserDao user = optuser.get();
+        user.setPictureId(imgId);
+        userRepository.save(user);
+        return true;
+    }
+
+    public Optional<UserDao> getUser(String userId) {
+        return userRepository.findById(userId);
     }
 
     public enum status {ADDED, EMAILS_EXISTS}

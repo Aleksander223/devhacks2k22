@@ -15,10 +15,6 @@ public interface UserRepository extends MongoRepository<UserDao, String> {
     Optional<UserDao> findByEmail(String email);
 
 
-    Optional<UserDao> findById(String id);
-
-    Optional<UserDao> findUserDaoById(String id);
-
    // @Query("{communityId:'?0'}")
     List<UserDao> findByCommunityId(String communityId);
 

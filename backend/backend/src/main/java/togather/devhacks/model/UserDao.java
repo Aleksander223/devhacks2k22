@@ -22,8 +22,7 @@ public class UserDao {
     }
 
     @Id
-    @Field(name = "_id")
-    public String Id;
+    public String id;
     @Field(name = "phoneNumber")
     public String phoneNumber;
 
