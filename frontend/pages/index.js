@@ -3,31 +3,32 @@ import { FiHeart, FiCoffee, FiShare2 } from "react-icons/fi";
 import { FaRecycle, FaRunning } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 const restaurants = [
   {
     id: 1,
-    name: "Shaormeria Baneasa",
-    img: "https://placeimg.com/400/225/arch"
+    name: "Cafeneaua Leche",
+    img: "https://api.lorem.space/image/drink?w=400&h=225"
   },
   {
     id: 2,
-    name: "Furgoneta",
-    img: "https://placeimg.com/400/225/arch"
+    name: "Pizza Italia",
+    img: "https://api.lorem.space/image/pizza?w=400&h=225"
   }
 ]
 
 const events = [
   {
     id: 1,
-    name: "Test",
-    location: "Locatia A",
+    name: "Rally for noise polution",
+    location: "Santier strada Manunt 14",
     date: "22.10.2022"
   },
   {
     id: 2,
-    name: "Test 2",
-    location: "Locatia B",
+    name: "Curatenie gradina",
+    location: "Parcela B scara A blocuri 12-14",
     date: "23.10.2022"
   }
 ]
@@ -35,23 +36,23 @@ const events = [
 const smallEvents = [
   {
     id: 1,
-    name: "test",
-    location: "Locatia X",
+    name: "Buna dimineata la cafelutza!",
+    location: "Leche, strada Brutarilor 11",
     date: "22.10.2022"
   },
   {
     id: 2,
-    name: "testing",
-    location: "Locatia Y",
+    name: "Morning streches",
+    location: "Parcul Copiilor",
     date: "23.10.2022"
   }
 ]
 
 const feed = [
-  "X a facut y",
-  "bbbbbbbbbbbbbbbbbbbb",
-  "Lorem",
-  "aaaaaaaaaaaaaaa"
+  "Alex tocmai a reciclat 1.3 kg plastic",
+  "Nu uita de pauza de cafea!",
+  "Prietenul copacilor lv 3",
+  "Ai primit 200 Comunity points!"
 ]
 
 export default function Home() {
@@ -122,7 +123,13 @@ export default function Home() {
                           <div className="badge badge-primary p-4 text-lg font-semibold">{event.location}</div>
                           <p className="inline ml-4 text-lg">{event.date}</p>
                           <br/>
-                          <Link href={`/event/${event.id}`}><button className="btn btn-secondary mt-3 btn-sm btn-wide text-secondary-content">View</button></Link>
+                         <button onClick={() => {
+                            Swal.fire(
+                                'You have joined the event!',
+                                "Can't wait to see you there",
+                                'success'
+                            )
+                        }} className="btn btn-secondary mt-3 btn-sm btn-wide text-secondary-content">Join</button>
                         </div>
                       </div>
                     );

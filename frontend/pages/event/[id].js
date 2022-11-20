@@ -2,15 +2,16 @@ import { RiLeafLine } from "react-icons/ri";
 import { TbTemperature } from "react-icons/tb"
 import { FiUser, FiUsers, FiMap, FiCalendar, FiFlag, FiFileText } from "react-icons/fi";
 import Avatar from "../../components/Avatar";
+import Swal from "sweetalert2";
 
 const event = {
-    name: "Event name",
-    host: "Lorem ipselescu",
-    location: "Pe deal",
+    name: "Plantam Impreuna!",
+    host: "Andrei Daniel",
+    location: "Gradinita Florilor",
     date: "10.09.2022",
     communityPoints: 300,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis ante justo. Integer suscipit, neque quis dapibus ultrices, elit ligula porttitor nisi, a dapibus purus mi et eros. Quisque eleifend fermentum sapien id euismod. Suspendisse ut aliquam massa. Morbi feugiat diam at est facilisis commodo. Maecenas eu lacus a nulla malesuada blandit. Cras rutrum elit eget mollis gravida. In sagittis interdum volutpat. Nullam mattis libero tellus, vel pellentesque sem aliquet ut. Ut et eleifend nulla. Duis vel ligula at augue volutpat sagittis id a erat. Maecenas lacus sem, fringilla sed sollicitudin at, gravida vel justo. Curabitur eleifend, metus et blandit tristique, justo nibh pretium quam, eu dignissim tortor mi eget lacus.",
-    participants: ["Test testescu", "Ion lorem"],
+    participants: ["Popescu Vlad", "Arimie Maria"],
     civicActivism: true,
     eco: true,
     wellness: false,
@@ -54,7 +55,13 @@ export default function EventPage() {
                         <p className="text-xl"><FiMap className="inline" /> Location: <span className="text-primary font-semibold">{event.location}</span></p>
                         <p className="text-xl"><FiCalendar className="inline" /> Date: <span className="text-primary font-semibold">{event.date}</span></p>
                         <p className="text-xl"><FiFlag className="inline" /> Community points: <span className="text-accent font-semibold">{event.communityPoints}</span></p>
-                        <button className="btn btn-primary mt-4">Join!</button>
+                        <button className="btn btn-primary mt-4" onClick={() => {
+                            Swal.fire(
+                                'You have joined the event!',
+                                "Can't wait to see you there",
+                                'success'
+                            )
+                        }}>Join!</button>
                     </div>
                 </div>
                 <div className="col-span-1 flex flex-row">

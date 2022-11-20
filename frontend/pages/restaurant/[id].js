@@ -2,11 +2,11 @@ import { RiLeafLine } from "react-icons/ri";
 import { TbTemperature } from "react-icons/tb"
 
 const restaurant = {
-    name: "Test restaurant",
+    name: "Pizza Italia",
     carbon: 203,
     vegan: true,
     level: 3,
-    img: "https://placeimg.com/400/225/arch"
+    img: "https://api.lorem.space/image/pizza?w=400&h=225"
 }
 
 const offers = [
@@ -23,7 +23,7 @@ export default function RestaurantProfile() {
         <div className="grid grid-cols-1 gap-4">
             <div className="col-span-1 text-center flex flex-row">
                 <div className="card bg-base-100 shadow-md border-base-200 border-2 w-full lg:w-2/3 p-4 mx-auto">
-                    <figure><img src="https://placeimg.com/400/225/arch" alt="car!" /></figure>
+                    <figure><img src={restaurant.img} alt="car!" /></figure>
                     <div className="card-body">
                         <h2 className="card-title mx-auto text-primary">{restaurant.name}</h2>
                         <div className="flex flex-col md:flex-row gap-4 content-evenly">

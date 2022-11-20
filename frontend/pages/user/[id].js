@@ -4,8 +4,8 @@ import { FiHome, FiUser, FiZap, FiBriefcase, FiClipboard, FiPhone, FiMail, FiEdi
 import KPICard from "../../components/KPICard";
 
 const info = {
-    address: "Str. Lorem Ipsum 4",
-    name: "Ionel Lorem",
+    address: "Str. Cetatii 4, bloc 11",
+    name: "Andrei Georgescu",
     member: true,
     hobbies: ["Engineering", "Football"],
     job: "Electrical engineer",
@@ -65,11 +65,11 @@ const UserProfile = () => {
                     </div>
                 </div>
                 <div className="col-span-1 mt-8">
-                    <KPICard title="2Support Solutions" percent={52} text="lorem" />
+                    <KPICard title="2Support Solutions" percent={52} text="Inca putin!" />
                     <br />
-                    <KPICard title="2Solve Activities" percent={84} text="lorem" />
+                    <KPICard title="2Solve Activities" percent={84} text="Supeeer!" />
                     <br />
-                    <KPICard title="2GiveBack Gifts" percent={12} text="lorem" />
+                    <KPICard title="2GiveBack Gifts" percent={12} text="Of, cam putin" />
                     <br />
                 </div>
                 <div className="col-span-1 mt-8">
@@ -79,10 +79,17 @@ const UserProfile = () => {
                             <div className="divider"></div>
                                 <div>
                                     <div className="badge badge-primary p-4 text-lg font-semibold">10.12.2022</div>
-                                    <p className="inline ml-4 text-lg">Prindem solobani</p>
+                                    <p className="inline ml-4 text-lg">Curatam gradina!</p>
                                 </div>
+                                <div className="divider"></div>
+                                <div>
+                                    <div className="badge badge-primary p-4 text-lg font-semibold">10.12.2022</div>
+                                    <p className="inline ml-4 text-lg">Yoga</p>
+                                </div>
+                                
 
                         </div>
+                        
                     </div>
                 </div>
             </div>
